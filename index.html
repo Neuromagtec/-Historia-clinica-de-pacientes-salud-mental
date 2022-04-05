@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Trabajo Final 1">
+    <meta name="author" content="Francisco Ruiz">
+
+    <title>Simulador Salud Mental</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+
+</head>
+<body onload="chequeoLocalStore();">
+    <div class="panel panel-primary">
+        <div class="panel-heading" >
+            <h1>Simulador Interactivo de Salud Mental</h1>
+            <h3>Entrega final del simulador</h3>
+            <h5>(por Francisco Carlos Ruiz)</h5>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-primary" id="btnEmpezar" onclick="empiezaDiagnostico()">Empezar Diagnostico</button>
+            </div>
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-secondary" id="btnUltimoInforme" onclick="mostrarUltimoInforme()">Último Diagnostico</button>
+            </div>
+            <div class="col-lg-3" id="btnExportar">
+                <button type="button" class="btn btn-info" id="btnExportarJSON" onclick="verExportar()">JSON</button>
+            </div>
+            <div class="col-lg-3">
+            </div>
+            <br><br>
+        </div>
+        <div class="container">
+            <div class="row" id="divNombre" style="display:none;">
+                <div class="col-lg-6">
+                    <label for="fname">Nombre:</label>
+                    <input type="text" id="txtNombre">
+                    <button type="button" class="btn btn-primary" id="btnNombreSig" onclick="seguirLuegoDeNombre()">Siguiente</button>
+                </div>
+                <div class="col-lg-6">
+                </div>
+            </div>
+            <div class="row" id="divEdad" style="display:none;">
+                <div class="col-lg-8">
+                    <label for="fname">Edad</label>
+                    <input type="number" id="txtEdad">
+                    <button type="button" class="btn btn-primary" id="btnNombreSig" onclick="generarInforme()">Generar Informe</button>
+                </div>
+                <div class="col-lg-4">
+                </div>
+            </div>
+            <div class="row" id="ctnInforme">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4>Informe</h4>
+                    </div>
+                    <div class="panel-body">
+                        <span id="informe"></span>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="panel panel-info" id="ctnExportar">
+                    <div class="panel-heading">
+                        <h4>Exportar a JSON</h4>
+                    </div>
+                    <div class="panel-body">
+                        <span id="exportar"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- scripts -->
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/diagnostico.js"></script> 
